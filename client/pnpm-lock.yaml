@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@chakra-ui/icons':
+    specifier: ^2.2.4
+    version: 2.2.4(@chakra-ui/react@2.10.7)(react@19.1.0)
   '@chakra-ui/next-js':
     specifier: ^2.2.0
     version: 2.4.2(@chakra-ui/react@2.10.7)(@emotion/react@11.14.0)(next@15.3.1)(react@19.1.0)
@@ -155,6 +158,16 @@ packages:
       '@zag-js/element-size': 0.31.1
       copy-to-clipboard: 3.3.3
       framesync: 6.1.2
+      react: 19.1.0
+    dev: false
+
+  /@chakra-ui/icons@2.2.4(@chakra-ui/react@2.10.7)(react@19.1.0):
+    resolution: {integrity: sha512-l5QdBgwrAg3Sc2BRqtNkJpfuLw/pWRDwwT58J6c4PqQT6wzXxyNa8Q0PForu1ltB5qEiFb1kxr/F/HO1EwNa6g==}
+    peerDependencies:
+      '@chakra-ui/react': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/react': 2.10.7(@emotion/react@11.14.0)(@emotion/styled@11.14.0)(@types/react@19.1.2)(framer-motion@11.18.2)(react-dom@19.1.0)(react@19.1.0)
       react: 19.1.0
     dev: false
 
