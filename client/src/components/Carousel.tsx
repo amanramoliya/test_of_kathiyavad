@@ -38,7 +38,7 @@ export const CardCarousel = ({
       align="center"
       spacing={4}
       pos="relative"
-      w={"full"}
+      w={"90%"}
       maxW="1000px"
       mx="auto"
     >
