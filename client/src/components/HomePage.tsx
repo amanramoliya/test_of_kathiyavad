@@ -2,6 +2,7 @@ import { CardCarousel } from "@/components/Carousel";
 import { Header } from "@/components/Header";
 import { Cards } from "@/components/items/Cards";
 import { OrderAtom } from "@/components/items/_state/order.atom";
+import { Order } from "@/components/items/interfaces/order.interface";
 import { useGetItems } from "@/components/items/query/use-get-items";
 import { useSendOrder } from "@/components/items/query/use-send-order";
 import {
@@ -63,7 +64,7 @@ export const HomePage = () => {
     onOpen: onOpenUserDetails,
     onClose: onCloseUserDetails,
   } = useDisclosure();
-  const [order, setOrder] = useAtom(OrderAtom);
+  const [order, setOrder] = useAtom<Order>(OrderAtom);
   const { data: items = [] } = useGetItems();
   const router = useRouter();
 
@@ -90,10 +91,11 @@ export const HomePage = () => {
 
   const calculateTotal = () => {
     return Object.entries(order).reduce((total, [itemId, quantity]) => {
-      const item = items.find((i) => i.id === Number(itemId));
+      const item = items.find((i) => i.id === itemId);
       return total + (item ? item.price * quantity : 0);
     }, 0);
   };
+  console.log(items);
 
   const orderItems = items.filter((item) => order[item.id] > 0);
 

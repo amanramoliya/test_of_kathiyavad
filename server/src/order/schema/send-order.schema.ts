@@ -1,7 +1,7 @@
 import zod from 'zod';
 
 export const OrderItemSchema = zod.object({
-  id: zod.number(),
+  id: zod.string(),
   name: zod.string(),
   quantity: zod.number().int().positive(),
   price: zod.number().positive(),

@@ -5,7 +5,7 @@ export interface SendOrder {
     address: string;
   };
   items: {
-    id: number;
+    id: string;
     name: string;
     quantity: number;
     price: number;

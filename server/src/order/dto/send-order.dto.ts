@@ -5,7 +5,7 @@ import {
 } from 'src/order/schema/send-order.schema';
 
 export class OrderItemDto implements OrderItem {
-  id: number;
+  id: string;
   name: string;
   quantity: number;
   price: number;
