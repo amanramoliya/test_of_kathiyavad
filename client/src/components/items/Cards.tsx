@@ -36,14 +36,14 @@ export const Cards = () => {
     setCurrentIndex((prev) => (prev < totalPages - 1 ? prev + 1 : prev));
   };
 
-  const handleIncrement = (itemId: number) => {
+  const handleIncrement = (itemId: string) => {
     setOrder((prev) => ({
       ...prev,
       [itemId]: (prev[itemId] || 0) + 1,
     }));
   };
 
-  const handleDecrement = (itemId: number) => {
+  const handleDecrement = (itemId: string) => {
     setOrder((prev) => ({
       ...prev,
       [itemId]: Math.max((prev[itemId] || 0) - 1, 0),
@@ -111,7 +111,7 @@ export const Cards = () => {
                 colorScheme="red"
                 aria-label="Decrease quantity"
                 icon={<MinusIcon />}
-                onClick={() => handleDecrement(item.id || idx)}
+                onClick={() => handleDecrement(item.id)}
                 isDisabled={(order[item.id || idx] || 0) === 0}
               />
 
@@ -132,7 +132,7 @@ export const Cards = () => {
                 colorScheme="green"
                 aria-label="Increase quantity"
                 icon={<AddIcon />}
-                onClick={() => handleIncrement(item.id || idx)}
+                onClick={() => handleIncrement(item.id)}
               />
             </HStack>
           </Flex>
