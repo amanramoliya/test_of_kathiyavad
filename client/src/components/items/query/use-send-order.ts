@@ -10,10 +10,11 @@ const sendOrder = async (url: string, body: SendOrder) => {
 
 export const useSendOrder = () => {
   const toast = useToast();
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
   return useMutation({
     mutationKey: sendOrderMutationKey(),
     mutationFn: async (orderData: SendOrder) => {
-      return sendOrder("http://localhost:5000/order/", orderData);
+      return sendOrder(`${baseUrl}order/`, orderData);
     },
     onSuccess: (data) => {
       console.log("Order placed successfully", data);

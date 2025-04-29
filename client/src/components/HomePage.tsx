@@ -190,6 +190,7 @@ export const HomePage = () => {
         bottom="0"
         width="100%"
         p={4}
+        maxWidth={"400px"}
         bg="white"
         boxShadow="0 -2px 10px rgba(0,0,0,0.1)"
       >
