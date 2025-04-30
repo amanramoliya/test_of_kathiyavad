@@ -46,6 +46,7 @@ export class OrderService {
       });
 
       if (response.status >= 200 && response.status < 300) {
+        console.log(response.status, response.data);
         return { success: true, message: 'Order sent successfully' };
       }
       throw new Error('Failed to send order');

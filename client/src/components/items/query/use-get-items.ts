@@ -9,7 +9,6 @@ const getItems = async (url: string) => {
 
 export const useGetItems = () => {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-  console.log(baseUrl);
   return useQuery<Item[]>({
     queryKey: getItemsQueryKey(),
     queryFn: async () => {

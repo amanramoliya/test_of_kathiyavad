@@ -95,7 +95,6 @@ export const HomePage = () => {
       return total + (item ? item.price * quantity : 0);
     }, 0);
   };
-  console.log(items);
 
   const orderItems = items.filter((item) => order[item.id] > 0);
 
